@@ -1,0 +1,23 @@
+.header {
+    background-color: var(--bg-cream);
+    color: var(--fg-cream);
+    height: 4.5rem;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    box-shadow: var(--shadow-soft);
+}
+
+.headerContainer {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerLogo {
+    height: 2.5rem;
+    vertical-align: bottom;
+}
+

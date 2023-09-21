@@ -1,0 +1,61 @@
+.menuItem {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.justifyLeft {
+    justify-content: left;
+}
+
+.justifySpaceBetween {
+    justify-content: space-between;
+}
+
+.nameContainer {
+    display: flex;
+    gap: .5rem;
+}
+
+.nameContainer > img {
+    height: 1.25rem;
+}
+
+.nameContainer > a {
+    text-decoration: none;
+    color: unset;
+}
+
+.nameContainer > a:hover {
+    text-decoration: underline;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--fg-cream);
+    color: var(--fg-white);
+    font-size: .75rem;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.borderDropDown {
+    border-bottom: 1px solid var(--bg-cream-darken);
+}
+
+.pointer {
+    cursor:pointer;
+}
+
+.linkEspecial {
+    display: flex;
+}
+
+.gap {
+    gap: 1rem;
+}

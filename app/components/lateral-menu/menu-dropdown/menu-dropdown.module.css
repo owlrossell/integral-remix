@@ -1,0 +1,6 @@
+.menuDropDown {
+    background-color: var(--bg-cream-darken);
+    overflow: hidden;
+
+    padding: 0 1rem 0 2rem;
+}

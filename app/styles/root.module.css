@@ -1,0 +1,17 @@
+.lightTheme {
+    --bg-cream: #FFF399;
+    --bg-cream-darken: #E9DD82;
+
+    --bg-gradient: radial-gradient(50% 50% at 50% 50%, #FFF9B2 0%, #FFEA80 100%);
+
+
+    --fg-cream: #928254;
+    --fg-white: #fff;
+    --fg-red: #E8262C;
+
+    --shadow-soft: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+}
+
+.darkTheme {
+
+}

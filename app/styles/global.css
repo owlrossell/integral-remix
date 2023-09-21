@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin: 0 1rem;
+}
+
+html {
+    font-family: Montserrat, sans-serif;
+}
+
+.iconButton {
+    font-size: 1.2rem;
+    background-color: unset;
+    color: unset;
+    border: none;
+    height: 2.5rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+}

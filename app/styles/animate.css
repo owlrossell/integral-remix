@@ -1,0 +1,44 @@
+.left-enter{
+    transform: translateX(100%);
+}
+.left-enter-active{
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
+}
+.left-exit{
+    transform: translateX(0);
+}
+.left-exit-active{
+    transform: translateX(100%);
+    transition: transform 300ms ease-in-out;
+}
+
+.dropdown-enter{
+    max-height: 0;
+}
+.dropdown-enter-active{
+    max-height: 65rem;
+    transition: max-height 200ms ease-in-out;
+}
+.dropdown-exit{
+    max-height: 65rem;
+}
+.dropdown-exit-active{
+    max-height: 0;
+    transition: max-height 200ms ease-in-out;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+}
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}

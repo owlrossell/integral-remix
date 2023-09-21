@@ -1,0 +1,27 @@
+.lateralMenu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0 ;
+
+    background-color: var(--bg-cream);
+    font-weight: 600;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+    font-weight: 700;
+}
+
+.header img {
+    height: 2.5rem;
+}
+
+.listMenuItems {
+    list-style: none;
+    padding-right: .5rem;
+}
