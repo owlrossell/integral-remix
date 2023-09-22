@@ -47,7 +47,7 @@ export default function App() {
             <Meta/>
             <Links/>
         </head>
-        <body>
+        <body className={styles.body}>
         <Header isDarkMode={isDarkMode}/>
         <Outlet/>
         <ScrollRestoration/>
