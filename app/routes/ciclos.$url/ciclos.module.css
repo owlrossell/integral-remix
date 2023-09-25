@@ -1,0 +1,116 @@
+.container {
+    margin-top: 4.5rem;
+}
+
+.hero {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.basicInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3rem 0;
+    color: var(--fg-cream-darken);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    padding: 0 1rem;
+    line-height: 1.5;
+}
+
+.info > h1 {
+    color: var(--fg-blue);
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.info > p > strong {
+    color: var(--fg-red);
+}
+
+.video {
+    aspect-ratio: 16/9;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    vertical-align: bottom;
+}
+
+.paymentPlans {
+    background-color: var(--bg-cream);
+}
+
+.paymentPlansContainer {
+    padding: 2rem 1rem;
+    color: var(--fg-cream);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.paymentPlansContainer h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.paymentPlan h4 {
+    background-color: var(--fg-blue);
+    color: var(--fg-white);
+    font-size: 1.5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paymentPlanMain h4 {
+    background-color: var(--fg-red);
+}
+
+.paymentPlanTable {
+    margin-top: 1rem;
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: var(--shadow-soft);
+    color: var(--fg-cream-darken);
+}
+
+.paymentPlanTable > thead {
+    background-color: var(--fg-blue);
+    color: var(--fg-white);
+    height: 3rem;
+}
+
+.paymentPlanTableMain > thead {
+    background-color: var(--fg-red);
+}
+
+.paymentPlanTable > thead > tr > th {
+    width: 50%;
+}
+
+.paymentPlanTable td {
+    text-align: center;
+    height: 4rem;
+    padding: 0 .5rem;
+}
+
+.paymentPlanTable > tbody > tr:nth-child(even) {
+    background-color: var(--bg-cream-darken);
+}

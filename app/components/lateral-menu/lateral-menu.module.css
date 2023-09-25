@@ -1,12 +1,26 @@
+.layer {
+    content: 'sdasd';
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+}
+
 .lateralMenu {
     position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
-    left: 0 ;
-
+    /*left: 0;*/
+    max-width: 600px;
+    right: 0;
     background-color: var(--bg-cream);
     font-weight: 600;
+    /*z-index: 10;*/
 }
 
 .header {

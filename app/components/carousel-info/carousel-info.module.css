@@ -1,0 +1,100 @@
+.carouselInfo {
+    background-color: var(--bg-cream);
+}
+
+.container {
+    padding: 3rem 0;
+}
+
+.container h2 {
+    color: var(--fg-cream);
+    text-align: center;
+}
+
+.carousel {
+    margin: 1rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.carouselItem {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.itemImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.itemImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+.itemInfo {
+    width: 100%;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem
+}
+
+.itemInfo h3 {
+    color: var(--fg-blue);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.itemInfo > p {
+    color: var(--fg-cream-darken);
+}
+
+.itemInfo > a {
+    background-color: var(--fg-blue);
+    border-radius: .5rem;
+    height: 2.75rem;
+    width: 100%;
+    color: var(--fg-white);
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out;
+}
+
+.itemInfo > a:hover {
+    background-color: var(--fg-blue-darken);
+}
+
+/*.controlButtons button {*/
+/*    width: 2.5rem;*/
+/*    height: 2.5rem;*/
+/*    position: absolute;*/
+/*    border-radius: 3rem;*/
+/*    border: none;*/
+/*    background-color: var(--bg-cream-darken);*/
+/*    box-shadow: var(--shadow-soft);*/
+/*    bottom: 0;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.controlButtons button:nth-child(1){*/
+/*    left: 0;*/
+/*    transform: translateX(-50%) translateY(50%);*/
+/*}*/
+
+/*.controlButtons button:nth-child(2){*/
+/*    right: 0;*/
+/*    transform: translateX(50%) translateY(50%);*/
+/*}*/

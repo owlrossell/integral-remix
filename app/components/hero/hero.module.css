@@ -34,7 +34,7 @@
     font-size: 2.5rem;
 }
 
-.heroInfo > h1 > span {
+.heroInfo > h1 > strong {
     color: var(--fg-red);
 }
 

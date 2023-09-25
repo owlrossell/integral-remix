@@ -1,15 +1,15 @@
 import {useRef} from "react";
 import {CSSTransition} from "react-transition-group";
 
-import type MenuItemType from "~/models/static/menuItem";
 import type {FunctionComponent} from 'react'
 
 import styles from './menu-dropdown.module.css';
 import MenuItem from "~/components/lateral-menu/menu-item";
+import {menuItemType} from "~/data/static/menuItems";
 
 const MenuDropDown: FunctionComponent<{
     isActive: boolean,
-    menuItems: MenuItemType[],
+    menuItems: menuItemType[],
 }> = ({
           isActive,
           menuItems,

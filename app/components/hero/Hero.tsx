@@ -1,20 +1,25 @@
 import styles from './hero.module.css';
-import successStories from "~/data/static/successStories";
-import {useEffect, useState} from "react";
+import {FunctionComponent, useEffect, useState} from "react";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
+import {heroItemType} from "~/data/static/heroItem";
+import ReactMarkdown from "react-markdown";
 
-const Hero = () => {
-    const images = successStories;
+const Hero: FunctionComponent<{
+    heroItem: heroItemType,
+}> = ({
+          heroItem,
+      }) => {
+    const successImages = heroItem.successImages;
     const [nowIndex, setNowIndex] = useState(0);
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setNowIndex((prevIndex) => (prevIndex + 1) % images.length);
+            setNowIndex((prevIndex) => (prevIndex + 1) % successImages.length);
         }, 10000);
 
         return () => {
             clearInterval(intervalId);
         }
-    }, [images])
+    }, [successImages])
 
     return (
         <main className={styles.hero}>
@@ -27,16 +32,16 @@ const Hero = () => {
                     >
                         <div className={styles.heroImage}>
                             <img
-                                src={images[nowIndex].image}
+                                src={successImages[nowIndex]}
                                 alt={'Éxito Integral'}
                             />
                         </div>
                     </CSSTransition>
                 </SwitchTransition>
-                <div className={styles.heroInfo}>
-                    <h1>¡Logremos <span>juntos</span> tu ingreso!</h1>
-                    <p>"Somos expertos en preparación preuniversitaria, con 28 años de experiencia"</p>
-                </div>
+                <ReactMarkdown
+                    className={styles.heroInfo}
+                    children={heroItem.content}
+                />
             </div>
         </main>
     );

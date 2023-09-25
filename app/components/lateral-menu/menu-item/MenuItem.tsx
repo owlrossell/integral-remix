@@ -2,16 +2,17 @@ import {Link} from "@remix-run/react";
 import newIcon from '~/../public/images/svg/new.svg'
 
 import type {FunctionComponent} from "react";
-import type MenuItemType from "~/models/static/menuItem";
 
 import styles from './menu-item.module.css';
 import MenuDropDown from "~/components/lateral-menu/menu-dropdown";
 import LateralMenu from "~/components/lateral-menu/LateralMenu";
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {menuItemType} from "~/data/static/menuItems";
+import LateralMenuContext from "~/components/lateral-menu/lateralMenuContext";
 
 const MenuItem: FunctionComponent<{
     isDropDown: boolean,
-    menuItem: MenuItemType,
+    menuItem: menuItemType,
     selectedMenuItem?: number,
     menuNumber?: number,
     onUpdateSelectedMenu?: (menuNumber: number) => void,
@@ -23,6 +24,8 @@ const MenuItem: FunctionComponent<{
           onUpdateSelectedMenu,
       }) => {
     const isActive = selectedMenuItem === menuNumber;
+
+    const [onCloseByContext]= useContext(LateralMenuContext);
 
     const [isNewMenuActive, setIsNewMenuActive] = useState(false);
 
@@ -37,7 +40,7 @@ const MenuItem: FunctionComponent<{
         return (
             <li className={styles.menuItem}>
                 <div className={styles.nameContainer}>
-                    <Link to={menuItem.url}>{menuItem.name}</Link>
+                    <Link to={menuItem.url} onClick={onCloseByContext}>{menuItem.name}</Link>
                     {menuItem.isNew && <img src={newIcon} alt="Icono nuevo"/>}
                 </div>
             </li>

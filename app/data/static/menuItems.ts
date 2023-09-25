@@ -1,7 +1,13 @@
-import type MenuItemType from "~/models/static/menuItem";
+export interface menuItemType {
+    name: string,
+    url?: string,
+    menuItems?: menuItemType[],
+    metaInfo?: number,
+    isNew?: boolean,
+}
 
 
-const menuItems:MenuItemType[] = [
+const menuItems:menuItemType[] = [
     {
         name: 'Ciclos presenciales',
         isNew: true,
@@ -57,6 +63,28 @@ const menuItems:MenuItemType[] = [
                 url: 'https://www.youtube.com/@devsolution6329',
             }
         ]
+    },
+    {
+        name: 'Ciclos presenciales',
+        menuItems: [
+            {
+                name: 'Ciclo 5TO Pre 2023',
+                isNew: true,
+                url: '/ciclos/ciclo-5-to-pre-2023',
+            },
+            {
+                name: 'Ciclo Repaso 2023',
+                url:'/ciclos/ciclo-repaso-2023'
+            },
+            {
+                name: 'Ciclo Verano 2023',
+                url: '/ciclos/ciclo-verano-2023',
+            },
+        ]
+    },
+    {
+        name: 'Iniciar sesión',
+        url: '/login',
     }
 ]
 

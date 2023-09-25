@@ -6,8 +6,8 @@ import {CSSTransition} from 'react-transition-group';
 import styles from './lateral-menu.module.css';
 import MenuItem from "~/components/lateral-menu/menu-item";
 
-import type MenuItemType from "~/models/static/menuItem";
 import LateralMenuContext from "~/components/lateral-menu/lateralMenuContext";
+import {menuItemType} from "~/data/static/menuItems";
 
 const LateralMenu: FunctionComponent<{
     isLateralMenuActive: boolean,
@@ -15,7 +15,7 @@ const LateralMenu: FunctionComponent<{
     onCloseLateralMenu?: () => void,
     title: string,
     isDropDown: boolean,
-    menuItems: MenuItemType[],
+    menuItems: menuItemType[],
     icon?: string,
 }> = ({
           isLateralMenuActive,
@@ -30,8 +30,7 @@ const LateralMenu: FunctionComponent<{
 
     const [selectedMenuItem, setSelectedMenuItem] = useState(-1);
 
-    const [onCloseByContext] =  useContext(LateralMenuContext);
-
+    const [onCloseByContext] = useContext(LateralMenuContext);
     onCloseLateralMenu = onCloseLateralMenu || onCloseByContext;
 
     const onUpdateSelectedMenu = (menuNumber: number) => {
@@ -39,6 +38,7 @@ const LateralMenu: FunctionComponent<{
     }
 
     return (
+
         <CSSTransition
             in={isLateralMenuActive}
             classNames='left'
@@ -46,7 +46,8 @@ const LateralMenu: FunctionComponent<{
             timeout={300}
             unmountOnExit
         >
-            <LateralMenuContext.Provider value={onCloseLateralMenu ? [onCloseLateralMenu]: []}>
+            <LateralMenuContext.Provider value={onCloseLateralMenu ? [onCloseLateralMenu] : []}>
+                {!onBackLateralMenu && <div className={styles.layer} onClick={onCloseLateralMenu}></div>}
                 <div
                     className={styles.lateralMenu}
                     ref={lateralMenuRef}
@@ -78,11 +79,15 @@ const LateralMenu: FunctionComponent<{
                                     />
                                 ))
                             }
+                            <form className={`whitespace-nowrap`} action='/sign-out' method='POST'>
+                                <button>Cerrar sesión</button>
+                            </form>
                         </ul>
                     </div>
                 </div>
             </LateralMenuContext.Provider>
         </CSSTransition>
+
     );
 }
 

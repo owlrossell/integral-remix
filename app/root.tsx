@@ -1,5 +1,5 @@
 import {cssBundleHref} from "@remix-run/css-bundle";
-import type {LinksFunction} from "@remix-run/node";
+import type {LinksFunction, LoaderFunction} from "@remix-run/node";
 import {
     Links,
     LiveReload,
@@ -13,6 +13,23 @@ import animate from '~/styles/animate.css';
 import styles from '~/styles/root.module.css';
 import Header from "~/components/header";
 import {useState} from "react";
+import {getUserDate} from "~/utils/session.server";
+import {getOneUser} from "~/utils/user.server";
+import {json} from "@remix-run/node";
+
+export const loader:LoaderFunction = async ({request}) => {
+    const userData = await getUserDate(request);
+    const user = await getOneUser(userData?.user.id);
+
+    const isLogged = !!userData?.user;
+    const userImage = user?.profileImage.formats.thumbnail.url;
+    const userName = userData?.user.username;
+    return json({
+        isLogged,
+        userImage,
+        userName,
+    })
+}
 
 export const links: LinksFunction = () => [
     {rel: 'preconnect', href: 'https://fonts.googleapis.com'},
@@ -36,9 +53,10 @@ export const links: LinksFunction = () => [
 
 export default function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isLateralMenuActive, setIsLateralMenuActive] = useState(false);
     return (
         <html
-            className={isDarkMode ? styles.darkTheme: styles.lightTheme}
+            className={isDarkMode ? styles.darkTheme : styles.lightTheme}
             lang="es"
         >
         <head>
@@ -47,8 +65,12 @@ export default function App() {
             <Meta/>
             <Links/>
         </head>
-        <body className={styles.body}>
-        <Header isDarkMode={isDarkMode}/>
+        <body className={`${styles.body} ${isLateralMenuActive? styles.overFlowHidden : styles.overFlowAuto}`}>
+        <Header
+            isDarkMode={isDarkMode}
+            isLateralMenuActive={isLateralMenuActive}
+            setIsLateralMenuActive={setIsLateralMenuActive}
+        />
         <Outlet/>
         <ScrollRestoration/>
         <Scripts/>

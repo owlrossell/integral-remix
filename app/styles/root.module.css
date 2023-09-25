@@ -3,16 +3,18 @@
     --bg-cream-darken: #E9DD82;
 
     --bg-gradient: radial-gradient(50% 50% at 50% 50%, #FFF9B2 0%, #FFEA80 100%);
-    --bg-whitespace: #ececec;
+    --bg-whitespace: #fcfcfc0;
 
 
     --fg-cream: #928254;
+    --fg-cream-darken: #49412a;
     --fg-white: #f9f9f9;
     --fg-red: #E8262C;
     --fg-blue: #3D85CC;
+    --fg-blue-darken: #2e6399;
 
     --shadow-soft: 0 0 .5rem 0 rgba(0, 0, 0, 0.25);
-    --shadow-invisible:0 0 .25rem 0 rgba(0, 0, 0, 0.25);
+    --shadow-invisible: 0 0 .25rem 0 rgba(0, 0, 0, 0.25);
 }
 
 .darkTheme {
@@ -21,4 +23,12 @@
 
 .body {
     background-color: var(--bg-whitespace);
+}
+
+.overFlowHidden {
+    overflow: hidden;
+}
+
+.overFlowAuto {
+    overflow: auto;
 }

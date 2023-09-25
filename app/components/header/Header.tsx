@@ -5,12 +5,20 @@ import icon from '~/../public/images/svg/icon-academy-light.svg';
 
 import type {FunctionComponent} from "react";
 import {Link} from "@remix-run/react";
-import {useState} from "react";
 import LateralMenu from "~/components/lateral-menu/LateralMenu";
 import menuItems from "~/data/static/menuItems";
 
-const Header: FunctionComponent<{ isDarkMode: boolean }> = ({isDarkMode}) => {
-    const [isLateralMenuActive, setIsLateralMenuActive] = useState(false);
+const Header: FunctionComponent<{
+    isDarkMode: boolean,
+    isLateralMenuActive: boolean,
+    setIsLateralMenuActive: (newValue: boolean)=>void,
+
+}> = ({
+          isDarkMode,
+          isLateralMenuActive,
+          setIsLateralMenuActive,
+      }) => {
+
 
     const onButtonMenuClick = () => {
         setIsLateralMenuActive(true);

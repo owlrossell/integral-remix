@@ -1,12 +1,14 @@
 import styles from "./tabs.module.css";
 import {FunctionComponent, useState} from "react";
-import tabsItem from "~/models/static/tabsItem";
+
 import ReactMarkdown from "react-markdown";
 import {CSSTransition, SwitchTransition} from "react-transition-group";
+import {tabsItemType} from "~/data/static/tabsItems";
+
 
 const Tabs: FunctionComponent<{
     title: string,
-    tabsItems: tabsItem[]
+    tabsItems: tabsItemType[]
 }> = ({
           title,
           tabsItems
