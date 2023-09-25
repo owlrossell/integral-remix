@@ -1,4 +1,4 @@
-qimport FormLogin from "../components/formLogin/FormLogin";
+import FormLogin from "../components/formLogin/FormLogin";
 import {signIn, createUserSession} from '~/utils/session.server';
 import {ActionFunction, MetaFunction} from "@remix-run/node";
 
